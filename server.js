@@ -29,6 +29,12 @@ app.get("/hello/:name", (req, res) => {
 
 });
 
+// Handle 404 - unknown routes
+app.use((req, res) => {
+    res.status(404).json({ error: "Route not found" });
+
+});
+
 
 
 
