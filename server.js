@@ -18,6 +18,24 @@ app.get('/contact', (req, res) => {
     res.send({ ' message': 'You can contact me at my email address: murad4917@gmail.com Phone:+251928334917' });
 });
 
+
+// Route 4: /hello/:name - URL parameter
+app.get("/hello/:name", (req, res) => {
+    const name = req.params.name;
+    res.status(200).json({
+        greeting: `Hello, ${name}!`,
+        tip: "You just used a URL parameter!",
+    });
+
+});
+
+
+
+
+
+
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 }); 
